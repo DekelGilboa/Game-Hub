@@ -1,10 +1,11 @@
 import './App.css'
+import { Heading } from '@chakra-ui/react'
 
 function App() {
 
   return (
     <>
-    <div>My App</div>
+    <Heading>My App</Heading>
     </>
   )
 }
