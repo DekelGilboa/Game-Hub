@@ -20,7 +20,6 @@ function App() {
         </Show>
         <GridItem area={"main"}>
           <GamesResult />
-          <div>main</div>
         </GridItem>
       </Grid>
     </>

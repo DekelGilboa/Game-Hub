@@ -2,9 +2,10 @@ import { SimpleGrid } from "@chakra-ui/react";
 import useGames from "../../hooks/useGames";
 import GameCard from "./GameCard";
 import { optimizeImg } from "../../services/optimizeImageSize";
+import LoadingCardsGrid from "./LoadingCardsGrid";
 
 const GamesResult = () => {
-  const { gamesList, error } = useGames();
+  const { gamesList, error, isLoading } = useGames();
   return (
     <>
       {error && <div>{error}</div>}
@@ -14,6 +15,7 @@ const GamesResult = () => {
         spacing={"1rem"}
         borderRadius={"1rem"}
       >
+        {isLoading && <LoadingCardsGrid/>}
         {gamesList.map((game) => (
           <GameCard
             game={{
