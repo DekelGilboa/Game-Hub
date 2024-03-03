@@ -5,7 +5,7 @@
  * @returns The optimized URL with a crop parameter.
  */
 
-export const optimizeImg = (url: string) => {
+export const optimizeImg = (url: string): string => {
   const target = "/media/";
   const index = url.indexOf(target) + target.length;
   const crop = "crop/600/400/";

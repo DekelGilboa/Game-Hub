@@ -22,8 +22,8 @@ const LoadingCardsGrid = () => {
             />
           </Skeleton>
           <CardBody>
-            <Stack>
-              <SkeletonText />
+            <Stack gap={"1em"}>
+              <SkeletonText noOfLines={1} skeletonHeight="3"/>
               <HStack justifyContent={"space-between"}>
                 <SkeletonCircle />
                 <SkeletonCircle />
