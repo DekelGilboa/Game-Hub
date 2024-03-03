@@ -35,7 +35,7 @@ const useData = <T>(dataType: string) => {
       }, 2000);
     }
     return () => controller.abort();
-  }, []);
+  }, [dataType]);
   return { data, error, isLoading };
 };
 
