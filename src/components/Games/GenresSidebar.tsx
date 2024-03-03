@@ -1,7 +1,7 @@
 import useGenres from "../../hooks/useGenres";
 
 const GenresSidebar = () => {
-  const { genresList, error } = useGenres();
+  const { data: genresList, error } = useGenres();
 
   return (
     <>
