@@ -22,7 +22,7 @@ const slugToIconsMap: { [key: string]: IconType } = {
   playstation: FaPlaystation,
   xbox: FaXbox,
   mac: FaApple,
-  linox: FaLinux,
+  linux: FaLinux,
   android: FaAndroid,
   ios: MdPhoneIphone,
   nintendo: SiNintendo,
@@ -31,7 +31,7 @@ const slugToIconsMap: { [key: string]: IconType } = {
 
 const PlatformsIcons = ({ platforms }: Props) => {
   return (
-    <HStack justifyContent={"center"} paddingY={"0.2rem"}>
+    <HStack flexWrap={"wrap"}>
       {platforms.map(({ id, slug }) => (
         <Icon key={id} as={slugToIconsMap[slug]} color={"gray.500"}></Icon>
       ))}
