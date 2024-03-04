@@ -3,9 +3,14 @@ import GameCard from "./GameCard";
 import { optimizeImg } from "../../services/optimizeImageSize";
 import LoadingCardsGrid from "./LoadingCardsGrid";
 import useGames from "../../hooks/useGames";
+import { Genre } from "../../hooks/useGenres";
 
-const GamesResult = () => {
-  const { data:gamesList, error, isLoading } = useGames();
+interface Props {
+  selectedGenre: Genre | null;
+}
+
+const GamesResult = ({ selectedGenre }: Props) => {
+  const { data: gamesList, error, isLoading } = useGames(selectedGenre);
   return (
     <>
       {error && <div>{error}</div>}
@@ -15,7 +20,7 @@ const GamesResult = () => {
         spacing={"1rem"}
         borderRadius={"1rem"}
       >
-        {isLoading && <LoadingCardsGrid/>}
+        {isLoading && <LoadingCardsGrid />}
         {gamesList.map((game) => (
           <GameCard
             game={{
