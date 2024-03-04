@@ -27,6 +27,7 @@ function App() {
           <GridItem area={"aside"} ps={"0.5rem"}>
             <GenresSidebar
               onSelectedGenre={(g: Genre) => setSelectedGenre(g)}
+              selectedGenre={selectedGenre}
             />
           </GridItem>
         </Show>
