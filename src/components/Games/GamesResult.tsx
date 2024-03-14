@@ -2,15 +2,16 @@ import { SimpleGrid } from "@chakra-ui/react";
 import GameCard from "./GameCard";
 import { optimizeImg } from "../../services/optimizeImageSize";
 import LoadingCardsGrid from "./LoadingCardsGrid";
-import useGames from "../../hooks/useGames";
+import useGames, { Platform } from "../../hooks/useGames";
 import { Genre } from "../../hooks/useGenres";
 
 interface Props {
   selectedGenre: Genre | null;
+  selectedPlatform: Platform | null;
 }
 
-const GamesResult = ({ selectedGenre }: Props) => {
-  const { data: gamesList, error, isLoading } = useGames(selectedGenre);
+const GamesResult = ({ selectedGenre, selectedPlatform }: Props) => {
+  const { data: gamesList, error, isLoading } = useGames(selectedGenre, selectedPlatform);
   return (
     <>
       {error && <div>{error}</div>}
