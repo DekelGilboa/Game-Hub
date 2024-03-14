@@ -35,7 +35,6 @@ const GenresSidebar = ({ onSelectedGenre, selectedGenre }: Props) => {
               variant={"link"}
             >
               <Text
-                // stick to the left
                 textAlign={"left"}
                 whiteSpace={"pre-line"}
                 fontWeight={g.id == selectedGenre?.id ? "600" : "500"}
