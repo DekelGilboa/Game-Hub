@@ -1,5 +1,5 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { IoChevronDownCircleOutline } from "react-icons/io5";
+import { FaAngleDown } from "react-icons/fa6";
 import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useGames";
 
@@ -18,7 +18,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
     );
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<IoChevronDownCircleOutline />}>
+      <MenuButton as={Button} rightIcon={<FaAngleDown />}>
         {selectedPlatform?.name || "Platroms"}
       </MenuButton>
       <MenuList>
