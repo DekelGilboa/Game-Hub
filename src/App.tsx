@@ -30,7 +30,7 @@ function App() {
           lg: "18vw 1fr",
         }}
       >
-        <GridItem area={"nav"}>
+        <GridItem mb={4} area={"nav"}>
           <NavBar />
         </GridItem>
         <Show above="lg">
