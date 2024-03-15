@@ -32,9 +32,11 @@ const slugToIconsMap: { [key: string]: IconType } = {
 const PlatformsIcons = ({ platforms }: Props) => {
   return (
     <HStack flexWrap={"wrap"}>
-      {platforms.map(({ id, slug }) => (
-        <>{slugToIconsMap[slug] && <Icon key={id} as={slugToIconsMap[slug]} color={"gray.500"}></Icon>}</>
-      ))}
+      {platforms.map(({ id, slug }) => {
+        return !slugToIconsMap[slug] ? null : (
+          <Icon key={id} as={slugToIconsMap[slug]} color={"gray.500"}></Icon>
+        );
+      })}
     </HStack>
   );
 };

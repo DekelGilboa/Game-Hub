@@ -6,7 +6,9 @@ interface Props {
 
 const GameScore = ({ score }: Props) => {
   const { colorMode } = useColorMode();
-  const color = score > 80 ? "green" : score > 60 ? "orange" : "red";
+  const color =
+    score < 10 ? "gray" : score > 80 ? "green" : score > 60 ? "orange" : "red";
+
   return (
     <Badge
       fontSize={"0.8em"}

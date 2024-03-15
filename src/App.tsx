@@ -7,11 +7,12 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
-import SortSelector from "./components/SortSelector";
+import OrderSelector from "./components/OrderSelector";
 
 export interface QueryDetails {
   genre: Genre | null;
   platform: Platform | null;
+  order: string;
 }
 
 function App() {
@@ -50,7 +51,12 @@ function App() {
               }
               selectedPlatform={queryDetails.platform}
             />
-            <SortSelector />
+            <OrderSelector
+              selectedOrder={queryDetails.order}
+              onSelectedOrder={(order: string) =>
+                setQueryDetails({ ...queryDetails, order })
+              }
+            />
           </HStack>
           <GamesResult queryDetails={queryDetails} />
         </GridItem>

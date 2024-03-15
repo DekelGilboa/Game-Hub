@@ -24,6 +24,7 @@ queryDetails: QueryDetails
       params: {
         genres: queryDetails.genre?.id,
         parent_platforms: queryDetails.platform?.id,
+        ordering: queryDetails.order,
       },
     },
     [queryDetails]
