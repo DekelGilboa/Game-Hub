@@ -1,3 +1,5 @@
+import placeholder from "../assets/no-image-placeholder.webp"
+
 /**
  * Optimizes the size of an image URL by adding a crop parameter.
  *
@@ -5,8 +7,9 @@
  * @returns The optimized URL with a crop parameter.
  */
 
+
 export const optimizeImg = (url: string): string => {
-  if (!url) return "";
+  if (!url) return placeholder;
   const target = "/media/";
   const index = url.indexOf(target) + target.length;
   const crop = "crop/600/400/";
