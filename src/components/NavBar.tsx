@@ -1,15 +1,30 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { HStack, Stack, Text } from "@chakra-ui/react";
 import ThemeSwitch from "./ThemeSwitch";
 import SearchInput from "./SearchInput";
 const NavBar = () => {
   return (
-    <HStack justifyContent={"space-between"} padding={"0.5rem 1rem"}>
-      <Text fontSize={26} fontWeight={"bold"}>
+    <Stack
+      direction={{ base: "column", md: "row" }}
+      justifyContent={"space-between"}
+      align={"center"}
+    >
+      <Text
+        fontSize={26}
+        fontWeight={"bold"}
+        whiteSpace={"nowrap"}
+        my={{ base: 4, md: 0 }}
+      >
         🎮 Game Hub 🎮
       </Text>
-      <SearchInput />
-      <ThemeSwitch />
-    </HStack>
+      <HStack
+        justifyContent={"space-between"}
+        padding={"0.5rem 1rem"}
+        width={"100%"}
+      >
+        <SearchInput />
+        <ThemeSwitch />
+      </HStack>
+    </Stack>
   );
 };
 
