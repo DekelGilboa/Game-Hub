@@ -1,7 +1,7 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { FaAngleDown } from "react-icons/fa6";
 import usePlatforms from "../hooks/usePlatforms";
 import { Platform } from "../hooks/useGames";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
 interface Props {
   onSelectedPlatform: (p: Platform) => void;
@@ -18,7 +18,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
     );
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<FaAngleDown />}>
+      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
         {selectedPlatform?.name || "Platroms"}
       </MenuButton>
       <MenuList>

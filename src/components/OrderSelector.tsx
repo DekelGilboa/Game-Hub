@@ -1,5 +1,5 @@
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
-import { FaAngleDown } from "react-icons/fa6";
 
 interface Props {
   onSelectedOrder: (o: string) => void;
@@ -19,7 +19,7 @@ const OrderSelector = ({ onSelectedOrder, selectedOrder }: Props) => {
   ];
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<FaAngleDown />}>
+      <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
         Order By:{" "}
         {orderOptions.find((option) => option.value === selectedOrder)?.label ||
           "Relevance"}
