@@ -15,9 +15,7 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = (
-queryDetails: QueryDetails
-) => {
+const useGames = (queryDetails: QueryDetails) => {
   return useData<Game>(
     "games",
     {
@@ -25,6 +23,7 @@ queryDetails: QueryDetails
         genres: queryDetails.genre?.id,
         parent_platforms: queryDetails.platform?.id,
         ordering: queryDetails.order,
+        search: queryDetails.search,
       },
     },
     [queryDetails]

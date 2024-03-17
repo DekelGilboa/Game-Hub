@@ -13,6 +13,7 @@ export interface QueryDetails {
   genre: Genre | null;
   platform: Platform | null;
   order: string;
+  search: string;
 }
 
 function App() {
@@ -31,7 +32,11 @@ function App() {
         }}
       >
         <GridItem mb={4} area={"nav"}>
-          <NavBar />
+          <NavBar
+            onSearch={(search: string) => {
+              setQueryDetails({ ...queryDetails, search });
+            }}
+          />
         </GridItem>
         <Show above="lg">
           <GridItem area={"aside"} ps={"0.5rem"}>
@@ -44,7 +49,7 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area={"main"}>
-          <HStack marginLeft={4} spacing={2} marginBottom={2}>
+          <HStack marginLeft={4} spacing={2} marginBottom={2} maxW={"90%"}>
             <PlatformSelector
               onSelectedPlatform={(p: Platform) =>
                 setQueryDetails({ ...queryDetails, platform: p })

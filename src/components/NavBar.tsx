@@ -1,7 +1,11 @@
 import { HStack, Stack, Text } from "@chakra-ui/react";
 import ThemeSwitch from "./ThemeSwitch";
 import SearchInput from "./SearchInput";
-const NavBar = () => {
+
+interface Props {
+  onSearch: (search: string) => void;
+}
+const NavBar = ({ onSearch }: Props) => {
   return (
     <Stack
       direction={{ base: "column", md: "row" }}
@@ -21,7 +25,7 @@ const NavBar = () => {
         padding={"0.5rem 1rem"}
         width={"100%"}
       >
-        <SearchInput />
+        <SearchInput onSearch={onSearch} />
         <ThemeSwitch />
       </HStack>
     </Stack>
