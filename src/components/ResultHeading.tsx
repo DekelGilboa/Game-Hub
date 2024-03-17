@@ -7,7 +7,7 @@ interface Props {
 
 const ResultHeading = ({ queryDetails }: Props) => {
   return (
-    <Heading as={"h1"}>
+    <Heading as={"h1"} fontSize={{ base: 16, sm: 26 }}>
       {`Result: ${queryDetails.platform?.name || ""} ${
         queryDetails.genre?.name || ""
       } games`}

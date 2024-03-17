@@ -51,8 +51,8 @@ function App() {
         </Show>
         <GridItem area={"main"}>
           <VStack marginLeft={4} marginBottom={2} align={"start"} spacing={5}>
-            <ResultHeading queryDetails={queryDetails}/>
-            <HStack spacing={2} maxW={"90%"}>
+            <ResultHeading queryDetails={queryDetails} />
+            <HStack spacing={2} maxW={"90%"} fontSize={{ base: 12, sm: 16 }}>
               <PlatformSelector
                 onSelectedPlatform={(p: Platform) =>
                   setQueryDetails({ ...queryDetails, platform: p })

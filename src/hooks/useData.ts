@@ -38,8 +38,8 @@ const useData = <T>(
           setIsLoading(false);
         });
       return () => controller.abort();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     deps ? [...deps] : []
   );
   return { data, error, isLoading };
