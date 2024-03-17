@@ -1,5 +1,5 @@
 import "./App.css";
-import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Show, VStack } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GamesResult from "./components/Games/GamesResult";
 import GenresSidebar from "./components/Games/GenresSidebar";
@@ -8,6 +8,7 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import OrderSelector from "./components/OrderSelector";
+import ResultHeading from "./components/ResultHeading";
 
 export interface QueryDetails {
   genre: Genre | null;
@@ -49,20 +50,23 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area={"main"}>
-          <HStack marginLeft={4} spacing={2} marginBottom={2} maxW={"90%"}>
-            <PlatformSelector
-              onSelectedPlatform={(p: Platform) =>
-                setQueryDetails({ ...queryDetails, platform: p })
-              }
-              selectedPlatform={queryDetails.platform}
-            />
-            <OrderSelector
-              selectedOrder={queryDetails.order}
-              onSelectedOrder={(order: string) =>
-                setQueryDetails({ ...queryDetails, order })
-              }
-            />
-          </HStack>
+          <VStack marginLeft={4} marginBottom={2} align={"start"} spacing={5}>
+            <ResultHeading queryDetails={queryDetails}/>
+            <HStack spacing={2} maxW={"90%"}>
+              <PlatformSelector
+                onSelectedPlatform={(p: Platform) =>
+                  setQueryDetails({ ...queryDetails, platform: p })
+                }
+                selectedPlatform={queryDetails.platform}
+              />
+              <OrderSelector
+                selectedOrder={queryDetails.order}
+                onSelectedOrder={(order: string) =>
+                  setQueryDetails({ ...queryDetails, order })
+                }
+              />
+            </HStack>
+          </VStack>
           <GamesResult queryDetails={queryDetails} />
         </GridItem>
       </Grid>
