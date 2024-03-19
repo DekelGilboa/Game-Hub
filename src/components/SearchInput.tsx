@@ -12,7 +12,6 @@ const SearchInput = ({ onSearch }: Props) => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     onSearch(seatchInput.current!.value);
-    console.log("Search submitted: " + seatchInput.current?.value);
     seatchInput.current!.value = "";
   };
 
