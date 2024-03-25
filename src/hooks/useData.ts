@@ -29,7 +29,7 @@ const useData = <T>(
           setTimeout(() => {
             setIsLoading(false);
             setData(res.data.results);
-          }, 250);
+          }, 100);
         })
         .catch((err) => {
           if (err instanceof CanceledError) return;
