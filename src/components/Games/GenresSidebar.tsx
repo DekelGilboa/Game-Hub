@@ -1,4 +1,12 @@
-import { Button, Image, List, ListItem, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Heading,
+  Image,
+  List,
+  ListItem,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import useGenres, { Genre } from "../../hooks/useGenres";
 import { optimizeImg } from "../../services/optimizeImageSize";
 import LoadingSidebar from "./LoadingSidebar";
@@ -12,7 +20,8 @@ const GenresSidebar = ({ onSelectedGenre, selectedGenre }: Props) => {
   const { data: genresList, isLoading, error } = useGenres();
 
   return (
-    <>
+    <VStack spacing={3} align={"left"}>
+      <Heading fontSize={"2xl"}>Genres:</Heading>
       {isLoading && <LoadingSidebar />}
       {error && <div>{error}</div>}
       <List display={"flex"} flexDirection={"column"} gap={"0.7rem"}>
@@ -50,7 +59,7 @@ const GenresSidebar = ({ onSelectedGenre, selectedGenre }: Props) => {
           </ListItem>
         ))}
       </List>
-    </>
+    </VStack>
   );
 };
 
