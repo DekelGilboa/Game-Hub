@@ -20,12 +20,12 @@ const GameCard = ({
   return (
     <Card overflow={"hidden"}>
       <Image src={background_image} />
-      <CardBody>
-        <Stack>
+      <CardBody padding={1} minH={100}>
+        <Stack h={"100%"} padding={1} justify={"space-between"}>
           <Heading textAlign={"center"} fontSize={"xl"} marginBottom={"0.4rem"}>
             {name}
           </Heading>
-          <HStack justifyContent={"space-between"}>
+          <HStack justifyContent={"space-between"} align={"end"}>
             <PlatformsIcons
               platforms={parent_platforms.map((p) => p.platform)}
             />
