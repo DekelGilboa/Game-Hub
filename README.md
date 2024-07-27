@@ -1,4 +1,6 @@
-# React + TypeScript + Vite
+# Deployed web-app:
+
+https://game-hub-dekelgilboa.netlify.app/
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
